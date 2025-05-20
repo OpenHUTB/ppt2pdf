@@ -1,0 +1,22 @@
+
+name: Build ppt2pdf
+
+on: [push, pull_request]
+    
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+
+      # 任务名称：设置Python环境
+      - name: Set up Python
+        # This is the version of the action for setting up Python, not the Python version.
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.8' # 指定python版本
+          # Optional - x64 or x86 architecture, defaults to x64
+          architecture: 'x64'
+      - name: Install Python dependencies
+        run: python -m pip install --upgrade pip comtypes pdfCropMargins pyinstaller
