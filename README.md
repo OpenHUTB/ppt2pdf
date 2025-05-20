@@ -1,7 +1,7 @@
-# PPT2Fig
+# PPT2PDF
 
 
-PPT2Fig 是一个简单实用的工具，可以快速将 **当前打开的PowerPoint的当前页面** 导出为矢量PDF文件，并自动裁剪白边。非常适合在使用PPT作图时，修改PPT后快速导出PDF插入到论文中。
+PPT2PDF 是一个简单实用的工具，可以快速将 **当前打开的PowerPoint的当前页面** 导出为矢量PDF文件，并自动裁剪白边。非常适合在使用PPT作图时，修改PPT后快速导出PDF插入到论文中。
 
 
 
@@ -22,15 +22,15 @@ PPT2Fig 是一个简单实用的工具，可以快速将 **当前打开的PowerP
 2. 如果你有python环境，可以使用pip安装
 
 ```bash
-pip install ppt2fig
+pip install ppt2fpdf
 ```
 然后运行
 ```bash
-ppt2fig
+ppt2pdf
 ```
 或者
 ```bash
-python -m ppt2fig
+python -m ppt2pdf
 ```
 
 ## 使用方法
@@ -69,8 +69,8 @@ conda activate ppt2pdf
 # tkinter: python自带
 pip install comtypes pdfCropMargins pyinstaller
 ```
-3. 参考[配置upx](https://blog.csdn.net/JiuShu110/article/details/132625538)配置upx，用于压缩exe文件（可选，28.2M -> 24.5M）
-4. 编译
+3. 压缩exe文件（可选）：根据 [配置upx链接](https://blog.csdn.net/JiuShu110/article/details/132625538) 下载 [UPX](https://upx.github.io) ，将解压后得到的`upx.exe`拷贝到项目主目录，然后运行第 4 步的打包命令。
+4. 编译打包
 ```cmd
 pyinstaller -F -w -n ppt2pdf --optimize=2 ppt2pdf/main.py  # 生成的发布文件为`dist/ppt2pdf.exe`
 ```
