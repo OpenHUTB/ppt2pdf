@@ -1,9 +1,7 @@
 # PPT2Fig
 
 
-PPT2Fig 是一个简单实用的工具，可以快速将 **当前打开的PowerPoint的当前页面** 导出为矢量PDF文件，并自动裁剪白边。非常适合科研人员在使用PPT作图时，修改PPT后快速导出PDF插入到论文中。
-
-PPT2Fig is a simple and practical tool that can quickly export the **current page of the currently opened PowerPoint** to a vector PDF file and automatically crop the white edge. It is very useful for scientific researchers to quickly export PDF after modifying PPT and inserting it into the paper.
+PPT2Fig 是一个简单实用的工具，可以快速将 **当前打开的PowerPoint的当前页面** 导出为矢量PDF文件，并自动裁剪白边。非常适合在使用PPT作图时，修改PPT后快速导出PDF插入到论文中。
 
 
 
@@ -19,7 +17,7 @@ PPT2Fig is a simple and practical tool that can quickly export the **current pag
 
 ## 安装方法
 
-1. 直接下载[Releases](https://github.com/elliottzheng/ppt2fig/releases)中的exe文件，双击即可运行
+1. 直接下载[Releases](https://github.com/OpenHUTB/ppt2pdf/releases)中的exe文件，双击即可运行
 
 2. 如果你有python环境，可以使用pip安装
 
@@ -50,12 +48,6 @@ python -m ppt2fig
 - Microsoft PowerPoint
 - Python 3.8+
 
-## 依赖项（安装时自动安装）
-
-- comtypes: 用于与PowerPoint交互    
-- pdfCropMargins: 裁剪PDF白边
-- tkinter: python自带
-
 
 ## 注意事项
 
@@ -67,13 +59,23 @@ python -m ppt2fig
 ## 编译指南
 
 1. 下载源码
-2. 创建一个环境，只安装本项目依赖和pyinstaller
-3. 参考[配置upx](https://blog.csdn.net/JiuShu110/article/details/132625538)配置upx，用于压缩exe文件
+2. 创建一个虚拟环境，只安装本项目依赖和pyinstaller
+```shell
+conda env list  # 查看当前存在的虚拟环境
+conda create -n ppt2pdf python=3.8
+conda activate ppt2pdf
+# comtypes: 用于与PowerPoint交互    
+# pdfCropMargins: 裁剪PDF白边
+# tkinter: python自带
+pip install comtypes pdfCropMargins pyinstaller
+```
+3. 参考[配置upx](https://blog.csdn.net/JiuShu110/article/details/132625538)配置upx，用于压缩exe文件（可选，28.2M -> 24.5M）
 4. 编译
 ```cmd
-pyinstaller -F -w -n ppt2fig --optimize=2 ppt2fig/main.py 
+pyinstaller -F -w -n ppt2pdf --optimize=2 ppt2pdf/main.py  # 生成的发布文件为`dist/ppt2pdf.exe`
 ```
 
-## 许可证
+## 参考
 
-[MIT License](LICENSE)
+- [pyinstaller打包瘦身](https://blog.csdn.net/JiuShu110/article/details/132625538)
+- [ppt2fig](https://github.com/elliottzheng/ppt2fig)
