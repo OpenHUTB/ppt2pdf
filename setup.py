@@ -2,18 +2,18 @@
 
 from setuptools import setup
 
-setup(name='ppt2fig',
+setup(name='powerpoint2pdf',
       version='1.0.1',
-      description='一键将当前PPT的页面导出为PDF，并自动裁剪白边。',
+      description='将PPT的页面导出为PDF',
       long_description=open('README.md', encoding='utf-8').read(),
       long_description_content_type='text/markdown',
-      author='Elliot Zheng',
-      author_email='admin@hypercube.top',
-      url='https://github.com/elliottzheng/ppt2fig',
-      packages=['ppt2fig'],
+      author='OpenHUTB',
+      author_email='2929@hutb.edu.cn',
+      url='https://github.com/OpenHUTB/ppt2pdf',
+      packages=['powerpoint2pdf'],
       entry_points={
            'console_scripts': [
-               'ppt2fig = ppt2fig.main:main'
+               'powerpoint2pdf = powerpoint2pdf.main:main'
            ]
       },
       install_requires=[

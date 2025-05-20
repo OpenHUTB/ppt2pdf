@@ -4,7 +4,7 @@ name: Build ppt2pdf
 on: [push, pull_request]
     
 jobs:
-  build_latex:
+  build_ppt2pdf:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
